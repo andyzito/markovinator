@@ -1,15 +1,15 @@
 class Snippet < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true, length: { minimum: 10 }
-  serialize :tokens
+  # serialize :tokens
   
   has_many :snippets_tags
   has_many :tags, through: :snippets_tags
 
-  before_save :tokenize
+  # before_save :tokenize
 
-  def tokenize
-    text = self.body.sub(/<|>/, '')
+  def tokenize text
+    text = text.sub(/<|>/, '')
     token_map = {
         # ',': '<PAUSE>',
         # '-': '<PAUSE>',
@@ -24,6 +24,10 @@ class Snippet < ApplicationRecord
     text = text.gsub(/\s+/, ' ')
     text = text.gsub(/( <EOS> ){2,}/, ' <EOS> ')
     self.tokens = text.split(' ')
+  end
+
+  def tokens
+    return tokenize self.body
   end
 
   def tag_list

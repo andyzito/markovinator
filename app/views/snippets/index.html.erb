@@ -1,18 +1,10 @@
 <h1>Snippets</h1>
+<a href="<%= new_snippet_path %>">Add new</a>
 
 <ul>
   <% @snippets.each do |snippet| %>
     <li>
       <%= link_to(snippet.title, snippet) %>
-      <!-- <p><%= snippet.body %></p> -->
-      
-      <!-- <ul>
-      <% if snippet.tags %>
-        <% snippet.tags.each do |tag| %>
-          <li><%= tag.name %></li>
-        <% end%>
-      <% end %>
-      </ul> -->
     </li>
   <% end %>
 </ul>
