@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root "snippets#index"
 
+  resources :generators
   resources :snippets
   resources :tags
 

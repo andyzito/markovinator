@@ -12,7 +12,6 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    snippet_params['tokens'] = helpers.tokenize(snippet_params['body'])
     @snippet = Snippet.new(snippet_params)
 
     if @snippet.save

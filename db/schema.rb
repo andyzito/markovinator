@@ -12,6 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2021_06_20_240750) do
 
+  create_table "generators", force: :cascade do |t|
+    t.text "model"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+  end
+
+  create_table "generators_tags", id: false, force: :cascade do |t|
+    t.integer "generator_id", null: false
+    t.integer "tag_id", null: false
+  end
+
   create_table "snippets", force: :cascade do |t|
     t.string "title"
     t.text "body"

@@ -1,7 +1,6 @@
 class Snippet < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true, length: { minimum: 10 }
-  # validates :tokens, presence: true
   serialize :tokens
   
   has_many :snippets_tags
