@@ -4,14 +4,15 @@
   <% @snippets.each do |snippet| %>
     <li>
       <%= link_to(snippet.title, snippet) %>
-      <p><%= snippet.body %></p>
-      <ul>
+      <!-- <p><%= snippet.body %></p> -->
+      
+      <!-- <ul>
       <% if snippet.tags %>
         <% snippet.tags.each do |tag| %>
           <li><%= tag.name %></li>
         <% end%>
       <% end %>
-      </ul>
+      </ul> -->
     </li>
   <% end %>
 </ul>

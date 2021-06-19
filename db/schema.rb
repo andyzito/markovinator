@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_17_054428) do
+ActiveRecord::Schema.define(version: 2021_06_20_240750) do
 
   create_table "snippets", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "tokens"
   end
 
   create_table "snippets_tags", id: false, force: :cascade do |t|

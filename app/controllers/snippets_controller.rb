@@ -12,6 +12,7 @@ class SnippetsController < ApplicationController
   end
 
   def create
+    snippet_params['tokens'] = helpers.tokenize(snippet_params['body'])
     @snippet = Snippet.new(snippet_params)
 
     if @snippet.save
@@ -23,6 +24,6 @@ class SnippetsController < ApplicationController
 
   private
     def snippet_params
-      params.require(:snippet).permit(:title, :body)
+      params.require(:snippet).permit(:title, :body, :tag_list, :tokens)
     end
 end

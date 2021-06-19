@@ -1,15 +1,34 @@
 <h1>New Snippet</h1>
 
-<%= form_with model: @tag do |form| %>
+<%= form_with model: @snippet do |form| %>
     <div>
-        <%= form.label :name %><br>
-        <%= form.text_field :name %>
-        <% @tag.errors.full_messages_for(:name).each do |message| %>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+        <% @snippet.errors.full_messages_for(:title).each do |message| %>
             <div><%= message %></div>
         <% end %>
     </div>
 
     <div>
+        <%= form.label :body %><br>
+        <%= form.text_area :body %>
+        <% @snippet.errors.full_messages_for(:body).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :tag_list %><br>
+        <%= form.text_field :tag_list %>
+        <% @snippet.errors.full_messages_for(:name).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <% @snippet.errors.full_messages_for(:tokens).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
         <%= form.submit %>
     </div>
 <% end %>

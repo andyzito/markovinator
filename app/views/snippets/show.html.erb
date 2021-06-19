@@ -1,7 +1,6 @@
 <h1><%= @snippet.title %></h1>
 <p><%= @snippet.body %></p>
 <ul>
-<% @snippet.tags.each do |tag| %>
-<li><%= tag.name %></li>
-<% end %>
+<li><%= @snippet.tag_list %></li>
+<li><%= @snippet.tokens %></li>
 </ul>
