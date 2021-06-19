@@ -4,15 +4,6 @@
   <% @generators.each do |generator| %>
     <li>
       <%= link_to(generator.name, generator) %>
-      <!-- <p><%= generator.body %></p> -->
-      
-      <!-- <ul>
-      <% if generator.tags %>
-        <% generator.tags.each do |tag| %>
-          <li><%= tag.name %></li>
-        <% end%>
-      <% end %>
-      </ul> -->
     </li>
   <% end %>
 </ul>
