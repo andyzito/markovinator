@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2021_06_20_240750) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.text "config"
   end
 
   create_table "generators_tags", id: false, force: :cascade do |t|
