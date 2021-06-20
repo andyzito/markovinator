@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Drought</title>
+    <title>Markov Pun TBD</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,9 +12,9 @@
 
   <body>
     <ul class="navbar">
-    <a href="<%= generators_path %>"><li>Generators</li></a>
-    <a href="<%= snippets_path %>"><li>Snippets</li></a>
-    <a href="<%= tags_path %>"><li>Tags</li></a>
+    <li><a href="<%= generators_path %>"><span>Generators</span></a></li>
+    <li><a href="<%= snippets_path %>"><span>Snippets</span></a></li>
+    <li><a href="<%= tags_path %>"><span>Tags</span></a></li>
     </ul>
     <%= yield %>
   </body>

@@ -1,10 +1,1 @@
-<h1>Tags</h1>
-<a href="<%= new_generator_path %>">Add new</a>
-
-<ul>
-  <% @tags.each do |tag| %>
-    <li>
-      <%= link_to(tag.name, tag) %>
-    </li>
-  <% end %>
-</ul>
+<%= render "index", entity_type: Tag, entities: @tags, titleprop: 'name' %>

@@ -1,10 +1,1 @@
-<h1>Snippets</h1>
-<a href="<%= new_snippet_path %>">Add new</a>
-
-<ul>
-  <% @snippets.each do |snippet| %>
-    <li>
-      <%= link_to(snippet.title, snippet) %>
-    </li>
-  <% end %>
-</ul>
+<%= render "index", entity_type: Snippet, entities: @snippets, titleprop: 'title' %>

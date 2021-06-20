@@ -1,10 +1,1 @@
-<h1>Generators</h1>
-<a href="<%= new_generator_path %>">Add new</a>
-
-<ul>
-  <% @generators.each do |generator| %>
-    <li>
-      <%= link_to(generator.name, generator) %>
-    </li>
-  <% end %>
-</ul>
+<%= render "index", entity_type: Generator, entities: @generators, titleprop: 'name' %>

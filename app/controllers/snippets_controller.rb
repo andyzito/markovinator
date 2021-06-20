@@ -14,11 +14,32 @@ class SnippetsController < ApplicationController
   def create
     @snippet = Snippet.new(snippet_params)
 
-    if @snippet.save
-      redirect_to(@snippet)
+  if @snippet.save
+    redirect_to(@snippet)
     else
       render(:new)
     end
+  end
+
+  def edit
+    @snippet = Snippet.find(params[:id])
+  end
+
+  def update
+    @snippet = Snippet.find(params[:id])
+
+    if @snippet.update(snippet_params)
+      redirect_to(@snippet)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @snippet = Snippet.find(params[:id])
+    @snippet.destroy
+
+    redirect_to snippets_path
   end
 
   private

@@ -13,16 +13,16 @@ class Snippet < ApplicationRecord
     token_map = {
         # ',': '<PAUSE>',
         # '-': '<PAUSE>',
-        '!': ' <EOS> ',
-        '.': ' <EOS> ',
-        '?': ' <EOS> ',
+        '!': ' <EOS:exc> ',
+        '.': ' <EOS:per> ',
+        '?': ' <EOS:que> ',
     }
     token_map.each do |search, replace|
         text = text.gsub(/#{Regexp.escape(search)}+/, replace)
     end
     text = text.gsub(/[^A-Za-z0-9\-\s\<\>]/, '')
     text = text.gsub(/\s+/, ' ')
-    text = text.gsub(/( <EOS> ){2,}/, ' <EOS> ')
+    # text = text.gsub(/( <EOS:([a-z])> ){2,}/, ' <EOS> ')
     self.tokens = text.split(' ')
   end
 
