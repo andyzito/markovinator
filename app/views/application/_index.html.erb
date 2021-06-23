@@ -3,7 +3,7 @@
 
 <ul>
   <% entities.each do |entity| %>
-    <li>
+    <div class="tab">
       <%= link_to(entity[titleprop], entity) %>
       <%= link_to "Destroy", polymorphic_path(entity),
                   method: :delete,
@@ -11,6 +11,6 @@
                   data: { confirm: "Are you sure?" } %>
       <%= link_to "Edit", edit_polymorphic_path(entity),
                         class: 'button'%>
-    </li>
+    </div>
   <% end %>
 </ul>

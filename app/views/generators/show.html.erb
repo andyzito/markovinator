@@ -1,6 +1,16 @@
 <h1><%= @generator.name %></h1>
-<ul>
-<li><%= @generator.tag_list %></li>
-<li><%= @generator.model %></li>
-<li><%= @generator.preview %></li>
-</ul>
+
+<div class="tab">
+<label>Tags</label>
+<%= @generator.tag_list %>
+</div>
+
+<div class="tab">
+<label>Preview</label>
+<%= @generator.preview %>
+</div>
+
+<div class="tab">
+<label>Model</label>
+<%= @generator.model %>
+</div>
