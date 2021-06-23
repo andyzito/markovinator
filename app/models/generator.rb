@@ -1,6 +1,6 @@
 class Generator < ApplicationRecord
   validates :tags, presence: true
-  validates :config, presence: true
+  # validates :config, presence: true
 
   has_many :generators_tags
   has_many :tags, through: :generators_tags

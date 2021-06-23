@@ -44,6 +44,6 @@ class SnippetsController < ApplicationController
 
   private
     def snippet_params
-      params.require(:snippet).permit(:title, :body, :tag_list, :tokens)
+      params.require(:snippet).permit(:title, :body, :tag_list)
     end
 end
