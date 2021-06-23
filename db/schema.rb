@@ -12,6 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2021_06_20_240750) do
 
+  create_table "generator_configs", force: :cascade do |t|
+    t.boolean "track_different_eos"
+    t.integer "generator_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["generator_id"], name: "index_generator_configs_on_generator_id"
+  end
+
   create_table "generators", force: :cascade do |t|
     t.text "model"
     t.datetime "created_at", precision: 6, null: false

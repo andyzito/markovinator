@@ -5,7 +5,7 @@ class Generator < ApplicationRecord
   has_many :generators_tags
   has_many :tags, through: :generators_tags
 
-  serialize :config
+  has_one :generator_config
 
   serialize :model
   before_save :create_model
@@ -61,5 +61,13 @@ class Generator < ApplicationRecord
       Tag.find_or_create_by(name: name)
     end
     self.tags = tags
+  end
+
+  def config_renderable
+    return self.config.to_h
+  end
+
+  def config_renderable=(config_renderable)
+
   end
 end

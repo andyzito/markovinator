@@ -44,6 +44,6 @@ class GeneratorsController < ApplicationController
 
   private
     def generator_params
-      params.require(:generator).permit(:name, :tag_list)
+      params.require(:generator).permit(:name, :tag_list, :config)
     end
 end
