@@ -1,0 +1,37 @@
+<%= form_with(model: token_mapping) do |form| %>
+  <% if token_mapping.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(token_mapping.errors.count, "error") %> prohibited this token_mapping from being saved:</h2>
+
+      <ul>
+        <% token_mapping.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :match %>
+    <%= form.text_field :match %>
+  </div>
+
+  <div class="field">
+    <%= form.label :token_type %>
+    <%= form.text_field :token_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :token_variant %>
+    <%= form.text_field :token_variant %>
+  </div>
+
+  <div class="field">
+    <%= form.label :replace %>
+    <%= form.text_field :replace %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

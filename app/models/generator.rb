@@ -21,6 +21,7 @@ class Generator < ApplicationRecord
     all_tokens.each do |tag_tokens|
       tag_tokens.each do |tokens|
         tokens.each_with_index do |token, i|
+
           next_token = tokens[i + 1]
           if (next_token.nil?)
             next
@@ -39,11 +40,16 @@ class Generator < ApplicationRecord
 
     current = model.keys.sample(1)[0]
     25.times do |i|
-      text = text + current + ' '
+      if /<[A-Z]+:[a-z]+>/.match(current)
+        token_mapping = TokenMapping.find_by(token_type: current[/<([A-Z]+):[a-z]+>/,1], token_variant: current[/<[A-Z]+:([a-z]+)>/,1])
+        text = text + token_mapping.replace
+      elsif
+        text = text + ' ' + current
+      end
       nextprobs = model[current]
       current = nextprobs.max_by { |_, weight| rand ** (1.0 / weight) }.first
-      end
-    text = text.gsub(' <EOS>', '.').strip
+    end
+
     if text[-1] != '.'
       text = text + '.'
     end

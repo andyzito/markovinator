@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Match:</strong>
+  <%= @token_mapping.match %>
+</p>
+
+<p>
+  <strong>Token type:</strong>
+  <%= @token_mapping.token_type %>
+</p>
+
+<p>
+  <strong>Token variant:</strong>
+  <%= @token_mapping.token_variant %>
+</p>
+
+<p>
+  <strong>Replace:</strong>
+  <%= @token_mapping.replace %>
+</p>
+
+<%= link_to 'Edit', edit_token_mapping_path(@token_mapping) %> |
+<%= link_to 'Back', token_mappings_path %>

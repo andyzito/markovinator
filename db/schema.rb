@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_20_240750) do
+ActiveRecord::Schema.define(version: 2021_06_23_042059) do
 
   create_table "generator_configs", force: :cascade do |t|
     t.boolean "track_different_eos"
@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 2021_06_20_240750) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+  end
+
+  create_table "token_mappings", force: :cascade do |t|
+    t.string "match"
+    t.string "token_type"
+    t.string "token_variant"
+    t.string "replace"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

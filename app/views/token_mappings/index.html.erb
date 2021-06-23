@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Token Mappings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Match</th>
+      <th>Token type</th>
+      <th>Token variant</th>
+      <th>Replace</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @token_mappings.each do |token_mapping| %>
+      <tr>
+        <td><%= token_mapping.match %></td>
+        <td><%= token_mapping.token_type %></td>
+        <td><%= token_mapping.token_variant %></td>
+        <td><%= token_mapping.replace %></td>
+        <td><%= link_to 'Show', token_mapping %></td>
+        <td><%= link_to 'Edit', edit_token_mapping_path(token_mapping) %></td>
+        <td><%= link_to 'Destroy', token_mapping, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Token Mapping', new_token_mapping_path %>

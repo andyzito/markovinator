@@ -5,6 +5,43 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+TokenMapping.create(
+  match: /,/,
+  token_type: 'PAUSE',
+  token_variant: 'comma',
+  replace: ',',
+)
+TokenMapping.create(
+  match: /(\s-)|(-\s)|(\s–)|(–\s)|(\s—)|(—\s)/,
+  token_type: 'PAUSE',
+  token_variant: 'dash',
+  replace: '—',
+)
+TokenMapping.create(
+  match: /\./,
+  token_type: 'EOS',
+  token_variant: 'period',
+  replace: '.',
+)
+TokenMapping.create(
+  match: /\.{2,}/,
+  token_type: 'EOS',
+  token_variant: 'ellipsis',
+  replace: '...',
+)
+TokenMapping.create(
+  match: /\?+/,
+  token_type: 'EOS',
+  token_variant: 'question',
+  replace: '?',
+)
+TokenMapping.create(
+  match: /\!+/,
+  token_type: 'EOS',
+  token_variant: 'exclamation',
+  replace: '!',
+)
+
 Snippet.create(
     title: 'A Robot\'s Life Chapter 1',
     body: 'meep boop zeep zorp. bleep. plink meep zop bing zip bap ponk boop beep.',
