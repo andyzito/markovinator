@@ -9,6 +9,10 @@
   overflow: hidden;
   min-height: 3rem;
 
+  &.tab-horizontal {
+    flex-direction: row;
+  }
+
   a {
     padding: 0 1rem;
     display: flex;

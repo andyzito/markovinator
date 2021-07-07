@@ -3,7 +3,7 @@
 
 <ul>
   <% entities.each do |entity| %>
-    <div class="tab">
+    <div class="tab tab-horizontal">
       <%= link_to "Destroy", polymorphic_path(entity),
                   method: :delete,
                   class: 'tab-button',
