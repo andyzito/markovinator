@@ -1,24 +1,26 @@
 <%= form_with model: generator do |form| %>
-    <div>
-        <%= form.label :name %><br>
+    <div class="tab">
+        <%= form.label :name %>
         <%= form.text_field :name %>
         <% generator.errors.full_messages_for(:title).each do |message| %>
             <div><%= message %></div>
         <% end %>
     </div>
 
-    <div>
-        <%= form.label :tag_list %><br>
+    <div class="tab">
+        <%= form.label :tag_list %>
         <%= form.text_field :tag_list %>
         <% generator.errors.full_messages_for(:name).each do |message| %>
             <div><%= message %></div>
         <% end %>
     </div>
 
-    <%= render "generator_config/form", config: :config, form: form %>
-    <% generator.errors.full_messages_for(:config).each do |message| %>
-        <div><%= message %></div>
-    <% end %>
+    <div class="tab">
+      <%= render "generator_config/form", config: :config, form: form %>
+      <% generator.errors.full_messages_for(:config).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
+    </div>
 
     <div>
         <%= form.submit %>

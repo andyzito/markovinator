@@ -1,32 +1,30 @@
 <%= form_with model: snippet do |form| %>
-    <div>
-        <%= form.label :title %><br>
+    <div class="tab">
+        <%= form.label :title %>
         <%= form.text_field :title %>
         <% snippet.errors.full_messages_for(:title).each do |message| %>
             <div><%= message %></div>
         <% end %>
     </div>
 
-    <div>
-        <%= form.label :body %><br>
+    <div class="tab">
+        <%= form.label :body %>
         <%= form.text_area :body %>
         <% snippet.errors.full_messages_for(:body).each do |message| %>
             <div><%= message %></div>
         <% end %>
     </div>
 
-    <div>
-        <%= form.label :tag_list %><br>
+    <div class="tab">
+        <%= form.label :tag_list %>
         <%= form.text_field :tag_list %>
         <% snippet.errors.full_messages_for(:name).each do |message| %>
             <div><%= message %></div>
         <% end %>
     </div>
 
-    <div>
-        <% snippet.errors.full_messages_for(:tokens).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
-        <%= form.submit %>
-    </div>
+    <% snippet.errors.full_messages_for(:tokens).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+    <%= form.submit %>
 <% end %>
