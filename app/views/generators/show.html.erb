@@ -2,15 +2,23 @@
 
 <div class="tab">
 <label>Tags</label>
+<span class="tab-content">
 <%= @generator.tag_list %>
+</span>
 </div>
 
 <div class="tab">
 <label>Preview</label>
+<span class="tab-content">
 <%= @generator.preview %>
+</span>
 </div>
 
 <div class="tab">
 <label>Model</label>
-<%= @generator.model %>
+<span class="tab-content">
+<pre>
+<%= JSON.pretty_generate(@generator.model) %>
+</pre>
+</span>
 </div>
