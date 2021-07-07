@@ -3,7 +3,11 @@
 <div class="tab">
 <label>Tags</label>
 <span class="tab-content">
-<%= @generator.tag_list %>
+<% @generator.tags.each do |tag| %>
+  <span class="tag">
+    <%= link_to tag.name, tag_url(tag) %>
+  </span>
+<% end %>
 </span>
 </div>
 
