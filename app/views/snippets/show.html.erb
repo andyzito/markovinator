@@ -1,6 +1,29 @@
 <h1><%= @snippet.title %></h1>
-<p><%= @snippet.body %></p>
-<ul>
-<li><%= @snippet.tag_list %></li>
-<li><%= @snippet.tokens %></li>
+
+<div class="tab">
+<label>Tags</label>
+<span class="tab-content">
+<% @snippet.tags.each do |tag| %>
+  <span class="tag">
+    <%= link_to tag.name, tag_url(tag) %>
+  </span>
+<% end %>
+</span>
+</div>
 </ul>
+
+<div class="tab">
+<label>Body</label>
+<span class="tab-content">
+<%= @snippet.body %>
+</span>
+</div>
+
+<div class="tab">
+<label>Tokens</label>
+<span class="tab-content">
+<pre>
+<%= JSON.pretty_generate(@snippet.tokens) %>
+</pre>
+</span>
+</div>
