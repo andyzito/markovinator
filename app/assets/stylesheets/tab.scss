@@ -19,6 +19,19 @@
     align-items: center;
   }
 
+  input[type=text], textarea {
+    margin: 5px;
+    box-sizing: border-box;
+    border: none;
+    padding: 0.5rem 1rem;
+    z-index: 10;
+
+    &:focus {
+      // border: 3px solid rgba(255,0,0,1) !important;
+      outline: 3px solid red;
+    }
+  }
+
   label {
     border-radius: 5px;
     padding: .5rem 1rem;
