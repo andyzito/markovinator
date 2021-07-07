@@ -9,20 +9,13 @@ class Snippet < ApplicationRecord
   # before_save :tokenize
 
   def tokens
-    text = self.body.sub(/<|>|:/, '')
+    text = self.body.sub(/<|>/, '')
     TokenMapping.find_each do |token_mapping|
-      # puts '-----'
-      # puts '[[[' + token_mapping.match.to_s + ']]]'
-      # puts token_mapping.token_type
-      # puts token_mapping.token_variant
-      # puts token_mapping.replace
-      # puts '----'
       text = text.gsub(token_mapping.match, ' ' + token_mapping.token + ' ')
     end
+    text = text.gsub(/\s+'|'\s+/, ' ')
     text = text.gsub(/[^A-Za-z0-9\-\s\<\>\:]/, '')
     text = text.gsub(/\s+/, ' ')
-    # text = text.gsub(/( <EOS:([a-z])> ){2,}/, ' <EOS> ')
-    # text = text.gsub(/<EOS([a-z]+)>/, '<EOS:\1>')
     return text.split(' ')
   end
 

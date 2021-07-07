@@ -38,8 +38,8 @@ class Generator < ApplicationRecord
     text = ""
     model = self.model
 
-    current = model.keys.sample(1)[0]
-    25.times do |i|
+    current = model['<EOS:period>'].max_by { |_, weight| rand ** (1.0 / weight) }.first
+    150.times do |i|
       if /<[A-Z]+:[a-z]+>/.match(current)
         token_mapping = TokenMapping.find_by(token_type: current[/<([A-Z]+):[a-z]+>/,1], token_variant: current[/<[A-Z]+:([a-z]+)>/,1])
         text = text + token_mapping.replace
