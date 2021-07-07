@@ -4,12 +4,15 @@
 <ul>
   <% entities.each do |entity| %>
     <div class="tab tab-horizontal">
-      <%= link_to "Destroy", polymorphic_path(entity),
-                  method: :delete,
-                  class: 'tab-button',
-                  data: { confirm: "Are you sure?" } %>
-      <%= link_to "Edit", edit_polymorphic_path(entity),
-                        class: 'tab-button'%>
+      <% if !defined?destroy_button or destroy_button %>
+        <%= link_to "Destroy", polymorphic_path(entity),
+                    method: :delete,
+                    class: 'tab-button',
+                    data: { confirm: "Are you sure?" } %>
+      <% end %>
+      <% if !defined?edit_button or edit_button %>
+        <%= link_to "Edit", edit_polymorphic_path(entity), class: 'tab-button' %>
+      <% end %>
       <%= link_to(entity[titleprop], entity) %>
     </div>
   <% end %>
