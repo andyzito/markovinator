@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  width: 100%;
+  border-bottom: 2px solid black;
+  align-items: baseline;
+  justify-content: space-between;
+
+  h1 {
+    color: #6e6e6e;
+    font-size: 2rem;
+    font-family: 'Otomanopee One', sans-serif;
+  }
+}

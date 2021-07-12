@@ -1,0 +1,7 @@
+<% if current_page?(path)%>
+  <% current = 'current' %>
+<% else %>
+  <% current = '' %>
+<% end %>
+
+<li class="<%= current %>"><a href="<%= path %>"><span><%= title %></span></a></li>
