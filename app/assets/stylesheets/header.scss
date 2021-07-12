@@ -1,12 +1,14 @@
 header {
   display: flex;
+  box-sizing: border-box;
   width: 100%;
+  padding: 0 2rem;
   border-bottom: 2px solid black;
   align-items: baseline;
   justify-content: space-between;
 
   h1 {
-    color: #6e6e6e;
+    color: #5e5e5e;
     font-size: 2rem;
     font-family: 'Otomanopee One', sans-serif;
   }
