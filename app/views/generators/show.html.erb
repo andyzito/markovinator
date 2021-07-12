@@ -12,14 +12,14 @@
 </div>
 
 <div class="tab">
-<label>Preview</label>
+<label>Preview of Generated Text</label>
 <span class="tab-content">
 <%= @generator.preview %>
 </span>
 </div>
 
 <div class="tab">
-<label>Model</label>
+<label>Model (JSON)</label>
 <span class="tab-content">
 <pre>
 <%= JSON.pretty_generate(@generator.model) %>
