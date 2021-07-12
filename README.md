@@ -1,24 +1,37 @@
 # README
+**BETA Version 0.1.0**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Remarkable Markovinator (not yet trademarked) is an experimental/demo Ruby on Rails application. It allows users to save arbitrary text content with taxonomic tags. "Generators" are also tagged, and each Generator will create a Markov model based on text content with matching tags. The Generator will then output sample text based on the Markov model.
 
-Things you may want to cover:
+## The Linguistics
 
-* Ruby version
+A Markov model represents a corpus of text as transitional probabilities between tokens. In other words, the model contains data for any given token (a word or punctuation) on the probability of that token being followed by any other token. The probabilities are derived from the corpus when the model is "trained". The training process involves iterating over every token in the corpus. The most basic form of the algorithm for each token can be described as follows:
 
-* System dependencies
+1. If this token is not in the model, add it (pseudocode: `Model[token] = {}`).
+2. If the token after this token (token²) is not tracked, add it (pseudocode: `Model[token][token²] = 0`).
+3. If token² *is* already tracked, increment the count (pseudocode: `Model[token][token²] += 1`).
 
-* Configuration
+The model can then be used to produce potentially valid natural language strings. This process is even simpler. A first token is selected, and then a random token is picked to follow it from the list of possible following tokens, weighted by probability.
 
-* Database creation
+Currently, the Markov model training in this application is quite naive. For example, more advanced Markov models track probabilities over chains of tokens longer than two. I hope to implement this functionality in the future.
 
-* Database initialization
+## Theoretical Usage
 
-* How to run the test suite
+There are several possible purposes the Markovinator could serve. The first is: fun! It is amusing to play with generative models like this, and experiment with generating samples from different corpuses. As the Markovinator grows more advanced, and more model configuration becomes possible, it could also be used in an educational setting.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Future Enhancements
 
-* Deployment instructions
+In hypothetical (or possibly not so hypothetical) future iterations of this application, I hope to implement the following:
 
-* ...
+* Improved accessibility (a full audit of the interface needs to be conducted)
+* More built-in corpus data
+* The ability to alter how the model is generated, including but not limited to:
+  * Which types of token to track
+  * Length of probability chain (2+)
+  * Arbitrary tokenization/detokenization rules
+* Interactive/prettier Model viewer
+  * Possibly a tree diagram?
+  * Collapse/expand each token chain/list
+* Interactive/prettier "sample" viewer
+  * Display model probability between each generated word
+  * Allow user to change any word and regenerate the sample tokens following it

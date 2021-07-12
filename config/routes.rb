@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :token_mappings
-  root "snippets#index"
+  root "application#home"
 
   resources :generators
   resources :snippets
