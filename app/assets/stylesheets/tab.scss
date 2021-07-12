@@ -43,11 +43,15 @@
 
   .tab-button {
     text-decoration: none;
-    color: black;
+    margin-left: .5rem;
 
-    &:hover {
-      background-color: black;
-      color: white;
+    &:not(.icon-button) {
+      color: black;
+
+      &:hover {
+        background-color: black;
+        color: white;
+      }
     }
   }
 }

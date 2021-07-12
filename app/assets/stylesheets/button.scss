@@ -12,3 +12,25 @@
         color: white;
     }
 }
+
+.icon-button {
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position: center;
+
+  &.edit-button {
+    background-image: url(image_path('icons/edit-line.svg'));
+
+    &:hover {
+      background-image: url(image_path('icons/edit-fill.svg'));
+    }
+  }
+
+  &.destroy-button {
+    background-image: url(image_path('icons/destroy-line.svg'));
+
+    &:hover {
+      background-image: url(image_path('icons/destroy-fill.svg'));
+    }
+  }
+}

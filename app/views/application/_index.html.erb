@@ -1,17 +1,18 @@
-<h1><%= entity_type.to_s + 's' %></h1>
-<a class="button" href="<%= new_polymorphic_path entity_type %>">Add new</a>
+<div class="page-header">
+  <a class="button" href="<%= new_polymorphic_path entity_type %>">Add new <%= entity_type %></a>
+</div>
 
 <ul>
   <% entities.each do |entity| %>
     <div class="tab tab-horizontal">
       <% if !defined?destroy_button or destroy_button %>
-        <%= link_to "Destroy", polymorphic_path(entity),
+        <%= link_to "", polymorphic_path(entity),
                     method: :delete,
-                    class: 'tab-button',
-                    data: { confirm: "Are you sure?" } %>
+                    class: 'tab-button destroy-button icon-button',
+                    data: { confirm: "Are you sure you want to delete this?" } %>
       <% end %>
       <% if !defined?edit_button or edit_button %>
-        <%= link_to "Edit", edit_polymorphic_path(entity), class: 'tab-button' %>
+        <%= link_to "", edit_polymorphic_path(entity), class: 'tab-button edit-button icon-button' %>
       <% end %>
       <%= link_to(entity[titleprop], entity) %>
     </div>

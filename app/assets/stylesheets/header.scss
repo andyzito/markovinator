@@ -11,3 +11,15 @@ header {
     font-family: 'Otomanopee One', sans-serif;
   }
 }
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem 3rem;
+  padding-bottom: 0;
+
+  .button {
+    font-weight: bold;
+  }
+}
