@@ -1,4 +1,4 @@
-<% if current_page?(path)%>
+<% if request.env['PATH_INFO'].scan(/^(\/[a-z]*)\/?.*/).last.first === path %>
   <% current = 'current' %>
 <% else %>
   <% current = '' %>
