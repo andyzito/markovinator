@@ -15,14 +15,14 @@
         <% end %>
     </div>
 
-    <div class="tab">
+    <!-- <div class="tab">
       <%= render "generator_config/form", config: :config, form: form %>
       <% generator.errors.full_messages_for(:config).each do |message| %>
           <div><%= message %></div>
       <% end %>
-    </div>
+    </div> -->
 
     <div>
-        <%= form.submit %>
+        <%= form.submit 'submit', :class => 'button' %>
     </div>
 <% end %>

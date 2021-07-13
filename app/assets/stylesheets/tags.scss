@@ -8,6 +8,10 @@
   border: 1px solid darkgrey;
   border-radius: 5px;
 
+  &:hover {
+    background-color: darkgrey;
+  }
+
   a {
     border-radius: 5px;
     text-decoration: none;

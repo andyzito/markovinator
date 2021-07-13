@@ -14,7 +14,7 @@
       <% if !defined?edit_button or edit_button %>
         <%= link_to "", edit_polymorphic_path(entity), class: 'tab-button edit-button icon-button' %>
       <% end %>
-      <%= link_to(entity[titleprop], entity) %>
+      <%= link_to entity[titleprop], entity, class: 'tab-button' %>
     </div>
   <% end %>
 </ul>
