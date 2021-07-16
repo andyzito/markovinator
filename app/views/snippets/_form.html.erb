@@ -15,7 +15,7 @@
         <% end %>
     </div>
 
-    <%= render "components/tab/taglist", form: form, entity: @snippet %>
+    <%= render "components/tab/form/taglist", form: form, entity: @snippet %>
 
     <% @snippet.errors.full_messages_for(:tokens).each do |message| %>
         <div><%= message %></div>
