@@ -1,0 +1,7 @@
+<div class="tab">
+    <%= form.label :tag_list, 'Tag List (tag1, tag2)' %>
+    <%= form.text_field :tag_list %>
+    <% entity.errors.full_messages_for(:name).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+</div>

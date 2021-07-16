@@ -7,13 +7,7 @@
         <% end %>
     </div>
 
-    <div class="tab">
-        <%= form.label :tag_list %>
-        <%= form.text_field :tag_list %>
-        <% generator.errors.full_messages_for(:name).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
-    </div>
+    <%= render "components/formtabs/formtab_taglist", form: form, entity: generator %>
 
     <!-- <div class="tab">
       <%= render "generator_config/form", config: :config, form: form %>

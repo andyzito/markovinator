@@ -15,13 +15,7 @@
         <% end %>
     </div>
 
-    <div class="tab">
-        <%= form.label :tag_list %>
-        <%= form.text_field :tag_list %>
-        <% snippet.errors.full_messages_for(:name).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
-    </div>
+    <%= render "components/formtabs/formtab_taglist", form: form, entity: snippet %>
 
     <% snippet.errors.full_messages_for(:tokens).each do |message| %>
         <div><%= message %></div>
