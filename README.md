@@ -1,6 +1,8 @@
 # README
 **BETA Version 0.1.0**
 
+**Author:** [Andrew Zito (andyzito.github.io)](https://andyzito.github.io)
+
 The Remarkable Markovinator (not yet trademarked) is an experimental/demo Ruby on Rails application. It allows users to save arbitrary text content with taxonomic tags. "Generators" are also tagged, and each Generator will create a Markov model based on text content with matching tags. The Generator will then output sample text based on the Markov model.
 
 ## Quick Guide
