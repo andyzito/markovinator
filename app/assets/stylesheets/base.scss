@@ -11,6 +11,11 @@ a {
 ul.entity-list {
   margin: 0;
   padding: 0;
+  list-style: none;
+
+  li .tab {
+    margin-bottom: 1rem;
+  }
 }
 
 article {
