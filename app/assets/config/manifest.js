@@ -1,2 +1,2 @@
 //= link_tree ../images
-//= link_file ../stylesheets/application.scss
+//= link_directory ../stylesheets .css
