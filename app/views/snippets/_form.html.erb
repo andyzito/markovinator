@@ -1,3 +1,4 @@
+<% snippet = entity %>
 <%= form_with model: snippet do |form| %>
     <div class="tab">
         <%= form.label :title %>
@@ -15,7 +16,7 @@
         <% end %>
     </div>
 
-    <%= render "components/formtabs/formtab_taglist", form: form, entity: snippet %>
+    <%= render "components/formtab/taglist", form: form, entity: snippet %>
 
     <% snippet.errors.full_messages_for(:tokens).each do |message| %>
         <div><%= message %></div>

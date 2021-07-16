@@ -1,0 +1,5 @@
+<div class="page-header">
+  <h1 class="page-title">New <%= eclass %></h1>
+</div>
+
+<%= render eclass.to_s.downcase.pluralize + "/form", entity: entity %>

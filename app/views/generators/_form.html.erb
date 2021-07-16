@@ -1,17 +1,17 @@
-<%= form_with model: generator do |form| %>
+<%= form_with model: @generator do |form| %>
     <div class="tab">
         <%= form.label :name %>
         <%= form.text_field :name %>
-        <% generator.errors.full_messages_for(:title).each do |message| %>
+        <% @generator.errors.full_messages_for(:title).each do |message| %>
             <div><%= message %></div>
         <% end %>
     </div>
 
-    <%= render "components/formtabs/formtab_taglist", form: form, entity: generator %>
+    <%= render "components/formtab/taglist", form: form, entity: @generator %>
 
     <!-- <div class="tab">
       <%= render "generator_config/form", config: :config, form: form %>
-      <% generator.errors.full_messages_for(:config).each do |message| %>
+      <% @generator.errors.full_messages_for(:config).each do |message| %>
           <div><%= message %></div>
       <% end %>
     </div> -->
