@@ -10,9 +10,17 @@ header {
   border-bottom: 1px solid #cccccc;
 
   h1 {
+    height: 100%;
+    margin: 0;
     color: #5e5e5e;
     font-size: 2rem;
     font-family: 'Otomanopee One', sans-serif;
+
+    a {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
   }
 }
 
