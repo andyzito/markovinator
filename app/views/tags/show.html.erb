@@ -1,17 +1,11 @@
-<h1><%= @tag.name %></h1>
+<h1 class="page-title">Tag: <%= @tag.name %></h1>
+
 <h2>Snippets</h2>
-<ul>
 <% @tag.snippets.each do |snippet| %>
-    <li>
-    <%= render partial: "snippets/embed", locals: { snippet: snippet } %>
-    </li>
+    <%= render 'components/tab/entity', entity: snippet %>
 <% end %>
-</ul>
+
 <h2>Generators</h2>
-<ul>
 <% @tag.generators.each do |generator| %>
-    <li>
-    <%= render partial: "generators/embed", locals: { generator: generator } %>
-    </li>
+    <%= render 'components/tab/entity', entity: generator %>
 <% end %>
-</ul>

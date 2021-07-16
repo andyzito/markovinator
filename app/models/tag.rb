@@ -6,4 +6,9 @@ class Tag < ApplicationRecord
 
     has_many :generators_tags
     has_many :generators, through: :generators_tags
-end
+
+    def title
+      return self.name
+    end
+
+  end

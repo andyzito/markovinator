@@ -10,6 +10,10 @@ class Generator < ApplicationRecord
   serialize :model
   before_save :create_model
 
+  def title
+    return self.name
+  end
+
   def create_model
     all_tokens = self.tags.collect do |tag|
       tag.snippets.collect do |snippet|
