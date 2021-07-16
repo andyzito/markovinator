@@ -2,7 +2,7 @@
   <a class="button" href="<%= new_polymorphic_path entity_type %>">Add new <%= entity_type %></a>
 </div>
 
-<ul>
+<ul class="entity-list">
   <% entities.each do |entity| %>
     <%= render 'components/tab/entity', entity: entity %>
   <% end %>
