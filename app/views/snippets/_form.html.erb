@@ -1,9 +1,8 @@
-<% snippet = entity %>
-<%= form_with model: snippet do |form| %>
+<%= form_with model: @snippet do |form| %>
     <div class="tab">
         <%= form.label :title %>
         <%= form.text_field :title %>
-        <% snippet.errors.full_messages_for(:title).each do |message| %>
+        <% @snippet.errors.full_messages_for(:title).each do |message| %>
             <div><%= message %></div>
         <% end %>
     </div>
@@ -11,15 +10,16 @@
     <div class="tab">
         <%= form.label :body %>
         <%= form.text_area :body %>
-        <% snippet.errors.full_messages_for(:body).each do |message| %>
+        <% @snippet.errors.full_messages_for(:body).each do |message| %>
             <div><%= message %></div>
         <% end %>
     </div>
 
-    <%= render "components/formtab/taglist", form: form, entity: snippet %>
+    <%= render "components/formtab/taglist", form: form, entity: @snippet %>
 
-    <% snippet.errors.full_messages_for(:tokens).each do |message| %>
+    <% @snippet.errors.full_messages_for(:tokens).each do |message| %>
         <div><%= message %></div>
     <% end %>
-    <%= form.submit %>
+
+    <%= form.submit 'submit', :class => 'button' %>
 <% end %>

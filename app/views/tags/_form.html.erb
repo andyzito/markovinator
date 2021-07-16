@@ -1,13 +1,11 @@
 <%= form_with model: @tag do |form| %>
-    <div>
-        <%= form.label :name %><br>
+    <div class="tab">
+        <%= form.label :name %>
         <%= form.text_field :name %>
         <% @tag.errors.full_messages_for(:name).each do |message| %>
             <div><%= message %></div>
         <% end %>
     </div>
 
-    <div>
-        <%= form.submit %>
-    </div>
+    <%= form.submit 'submit', :class => 'button' %>
 <% end %>
