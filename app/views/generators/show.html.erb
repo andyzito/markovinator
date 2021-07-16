@@ -1,28 +1,31 @@
-<h1 class="page-title">Generator: <%= @generator.name %></h1>
+<div class="page-header">
+  <h1 class="page-title">Generator: <%= @generator.title %></h1>
+  <a class="button" href="<%= edit_generator_path(@generator) %>">Edit</a>
+</div>
 
 <div class="tab">
-<label>Tags</label>
-<span class="tab-content">
-<% @generator.tags.each do |tag| %>
-  <span class="tag">
-    <%= link_to tag.name, tag_url(tag) %>
+  <label>Tags</label>
+  <span class="tab-content">
+  <% @generator.tags.each do |tag| %>
+    <span class="tag">
+      <%= link_to tag.name, tag_url(tag) %>
+    </span>
+  <% end %>
   </span>
-<% end %>
-</span>
 </div>
 
 <div class="tab">
-<label>Preview of Generated Text</label>
-<span class="tab-content">
-<%= @generator.preview %>
-</span>
+  <label>Preview of Generated Text</label>
+  <span class="tab-content">
+  <%= @generator.preview %>
+  </span>
 </div>
 
 <div class="tab">
-<label>Model (JSON)</label>
-<span class="tab-content">
-<pre>
-<%= JSON.pretty_generate(@generator.model) %>
-</pre>
-</span>
+  <label>Model (JSON)</label>
+  <span class="tab-content">
+  <pre>
+  <%= JSON.pretty_generate(@generator.model) %>
+  </pre>
+  </span>
 </div>

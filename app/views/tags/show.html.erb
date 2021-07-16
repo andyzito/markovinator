@@ -1,4 +1,7 @@
-<h1 class="page-title">Tag: <%= @tag.name %></h1>
+<div class="page-header">
+  <h1 class="page-title">Tag: <%= @tag.title %></h1>
+  <a class="button" href="<%= edit_tag_path(@tag) %>">Edit</a>
+</div>
 
 <h2>Snippets</h2>
 <% @tag.snippets.each do |snippet| %>

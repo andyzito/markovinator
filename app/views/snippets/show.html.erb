@@ -1,4 +1,7 @@
-<h1 class="page-title">Snippet: <%= @snippet.title %></h1>
+<div class="page-header">
+  <h1 class="page-title">Snippet: <%= @snippet.title %></h1>
+  <a class="button" href="<%= edit_snippet_path(@snippet) %>">Edit</a>
+</div>
 
 <div class="tab">
 <label>Tags</label>
