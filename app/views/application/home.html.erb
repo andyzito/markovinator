@@ -1,3 +1,5 @@
 <% require 'github/markup' %>
 
 <%= raw(GitHub::Markup.render_s(GitHub::Markups::MARKUP_MARKDOWN, File.read('README.md'))) %>
+
+<%= raw(GitHub::Markup.render_s(GitHub::Markups::MARKUP_MARKDOWN, File.read('CHANGELOG.md'))) %>
